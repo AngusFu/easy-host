@@ -1,6 +1,6 @@
 {
   "name": "easy-host",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Make web development easy.",
   "main": "lib/index.js",
   "scripts": {
