@@ -34,3 +34,8 @@ ps2.on('exit', () => {
   console.log('Firefox exits.')
 })
 ```
+
+## TODO
+
+- [ ] HTTPS support (deeper investigation required)
+- [ ] Cli support
