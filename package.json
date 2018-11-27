@@ -1,0 +1,26 @@
+{
+  "name": "easy-host",
+  "version": "0.1.0",
+  "description": "Make web development easy.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngusFu/easy-serve.git"
+  },
+  "author": "wemlion <angusfu1126@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AngusFu/easy-serve/issues"
+  },
+  "homepage": "https://github.com/AngusFu/easy-serve#readme",
+  "dependencies": {
+    "chrome-launcher": "^0.10.5",
+    "firefox-launch": "^1.1.0",
+    "get-port": "^4.0.0",
+    "http-proxy": "^1.17.0",
+    "mkdirp": "^0.5.1"
+  }
+}

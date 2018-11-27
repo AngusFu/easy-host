@@ -1,0 +1,26 @@
+/**
+ * Originated from hiproxy: http://hiproxy.org/
+ *
+ * SEE https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file
+ */
+var SYS_PROXY = ''
+var PROXY = 'PROXY 127.0.0.1:____PROXY_PORT____'
+var DIRECT = 'DIRECT'
+var EXCLUDE_REG = /localhost|::1|127\.0\.0\.1/
+
+var DOMAINS = ____DOMAINS____
+
+// eslint-disable-next-line
+function FindProxyForURL (url, host) {
+  host = host.toLowerCase()
+
+  if (DOMAINS.indexOf(host) > -1) {
+    return PROXY
+  }
+
+  if (!host.match(EXCLUDE_REG) && SYS_PROXY) {
+    return SYS_PROXY
+  } else {
+    return DIRECT
+  }
+}
