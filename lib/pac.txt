@@ -3,9 +3,9 @@
  *
  * SEE https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file
  */
-var SYS_PROXY = ''
-var PROXY = 'PROXY 127.0.0.1:____PROXY_PORT____'
-var DIRECT = 'DIRECT'
+ var DIRECT = 'DIRECT'
+var SYS_PROXY = ____SYS_PROXY___
+var DEV_PROXY = ____DEV_PROXY____
 var EXCLUDE_REG = /localhost|::1|127\.0\.0\.1/
 
 var DOMAINS = ____DOMAINS____
@@ -15,12 +15,16 @@ function FindProxyForURL (url, host) {
   host = host.toLowerCase()
 
   if (DOMAINS.indexOf(host) > -1) {
-    return PROXY
+    return DEV_PROXY
   }
 
-  if (!host.match(EXCLUDE_REG) && SYS_PROXY) {
-    return SYS_PROXY
-  } else {
+  if (host.match(EXCLUDE_REG)) {
     return DIRECT
   }
+
+  if (SYS_PROXY) {
+    return SYS_PROXY
+  }
+
+  return DIRECT
 }

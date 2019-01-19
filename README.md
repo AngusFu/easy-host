@@ -22,8 +22,15 @@ const easyHost = require('easy-host')
 const [ps1, ps2] = await easyHost({
   port: 8081,
   domains: ['test.wemlion.com'],
+  // default empty (DIRECT)
+  systemProxy: '127.0.0.1:1087',
+  // browser(s) to open on start
   browser: ['chrome', 'firefox'],
-  startingUrl: 'http://test.wemlion.com/'
+  // url to open on start
+  startingUrl: 'http://test.wemlion.com/',
+  // browsers' working dir
+  // Please add `.browser/` to your `.gitignore` file.
+  userDataDir: require('path').join(process.cwd(), '.browser')
 })
 
 ps1.on('exit', () => {
